@@ -9,7 +9,7 @@ import pandas as pd
 
 pd.set_option('display.max_rows', None)
 
-SELECTED_FEATURES = ['company_form_code', 'location_region_code', 'industry_code_1', 'industry_code_2', 'industry_code_3', 'industry_code_4', 'industry_code_5']
+SELECTED_FEATURES = ['location_region_code', 'industry_code']
 NUM_OF_ROWS = None
 
 def get_industry_code_1(industry_code_2):
@@ -45,7 +45,7 @@ def get_industry_code_1(industry_code_2):
 
 def load_data():
     company_df = pd \
-        .read_csv('data/prod_data_companies.csv',
+        .read_csv('data/prod_data_companies_2021_08_22.csv',
                   delimiter='\t',
                   dtype={
                       'business_id': 'string',
@@ -56,10 +56,6 @@ def load_data():
                       'location_region_code': 'string',
                       'location_municipality': 'string',
                       'location_municipality_code': 'string',
-                      'industry_code_5': 'string',
-                      'industry_code_4': 'string',
-                      'industry_code_3': 'string',
-                      'industry_code_2': 'string',
                       'industry_code': 'string',
                       'company_status': 'string',
                       'company_status_code': 'string',
@@ -68,7 +64,7 @@ def load_data():
                   nrows=NUM_OF_ROWS
                   )
 
-    company_df['industry_code_1'] = company_df.apply(lambda row: get_industry_code_1(row['industry_code_2']), axis=1)
+    # company_df['industry_code_1'] = company_df.apply(lambda row: get_industry_code_1(row['industry_code_2']), axis=1)
 
     item_ids = list(company_df['business_id'].values)
 
@@ -154,7 +150,7 @@ def print_sample_recommendations(model, lfm_data, data, user_ids):
         print("\n\n")
 
 
-if __name__ == "__main__":
+def initialize_model():
     data = load_data()
     lfm_data = parse_data_in_lightfm_format(data)
 

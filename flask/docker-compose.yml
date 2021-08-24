@@ -5,6 +5,6 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./app:/app
+      - ./code:/code
     env_file:
       - env.list
