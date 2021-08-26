@@ -158,3 +158,5 @@ def initialize_model():
     model.fit(lfm_data['interactions'], item_features=lfm_data['item_features'], epochs=5, verbose=True)
 
     print_sample_recommendations(model, lfm_data, data, ['611', '862'])
+
+initialize_model()
