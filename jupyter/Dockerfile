@@ -1,3 +1,3 @@
 FROM jupyter/scipy-notebook
 
-RUN conda install --quiet --yes -c conda-forge lightfm numpy
+RUN conda install --quiet --yes -c conda-forge lightfm numpy networkx pyvis
