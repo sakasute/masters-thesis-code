@@ -1,0 +1,13 @@
+## Kysymyksiä
+
+- item_ ja user_user_identity_featuret? Päälle vai pois?
+- Epochien määrä?
+- Miten evaluaatiofunktioiden train_interactions-parametri vaikuttaa?
+
+
+## Huomioita
+
+- Cross-validointia varten pilkotuissa dataseteissä ei ole mitään takuuta, kuinka monta interaktiota "ryhmään" osuu
+- Maksimiryhmäkoonkin rajoittaminen voisi olla paikoillaan? Saisi testiryhmiä pois + mahdollista, että niissä vähemmän sisäistä koheesiota + saattavat vääristää suosituksia
+- https://www.infoworld.com/article/3241852/how-to-implement-a-recommender-system.html
+- Lähdekoodin kera voisi koittaa perehtyä LightFM:n toimintaan
